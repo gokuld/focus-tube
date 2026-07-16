@@ -1,0 +1,20 @@
+{
+    "description": "Intentional YouTube. Gain control of what you watch.",
+    "manifest_version": 3,
+    "name": "Focus Tube",
+    "version": "0.1",
+    // "browser_specific_settings": {
+    // 	"gecko": {
+    // 	    "id": "blah"
+    // 	}
+    // },
+    "data_collection_permissions": {
+	"required": ["none"]
+    },
+    "content_scripts": [
+	{
+	    "matches": ["*://*.youtube.com/*"],
+	    "js": ["shorts-block.js"]
+	}
+    ]
+}
