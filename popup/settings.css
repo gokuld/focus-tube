@@ -1,0 +1,78 @@
+/* Popup */
+
+body {
+    font: message-box;
+    background: Canvas;
+    color: CanvasText;
+
+    margin: 16px;
+    min-width: 280px;
+}
+
+/* One row per setting */
+
+.setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 8px 0;
+}
+
+/* Toggle */
+
+.switch {
+    position: relative;
+
+    width: 44px;
+    height: 24px;
+}
+
+/* Hide the real checkbox */
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Track */
+
+.slider {
+    position: absolute;
+    inset: 0;
+
+    background: GrayText;
+    border-radius: 999px;
+
+    transition: background-color 0.2s;
+}
+
+/* Knob */
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    left: 3px;
+    top: 3px;
+
+    background: Canvas;
+    border-radius: 50%;
+
+    transition: transform 0.2s;
+}
+
+/* Checked */
+
+.switch input:checked + .slider {
+    background: AccentColor;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(20px);
+}
