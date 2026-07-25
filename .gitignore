@@ -1,1 +1,7 @@
 *~
+
+# Node.js dependencies
+node_modules/
+
+# web-ext
+web-ext-artifacts/
