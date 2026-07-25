@@ -3,7 +3,7 @@ const DEFAULT_SETTINGS = {
     hideGuideMenuShortsEntry: false
 };
 
-const SHORTS_SHELF_SELECTOR = "ytd-rich-shelf-renderer[is-shorts]";
+const SHORTS_LINK_SELECTOR = 'a[href^="/shorts/"]';
 const GUIDE_MENU_ENTRY_SELECTOR = "yt-formatted-string.ytd-guide-entry-renderer";
 const HIDDEN_CLASS = "focustube-hidden";
 
@@ -14,11 +14,13 @@ function getShortsShelves(node) {
 	return [];
     }
     
-    const shortsShelves = node.matches(SHORTS_SHELF_SELECTOR)
-			? [node]
-			: [...node.querySelectorAll(SHORTS_SHELF_SELECTOR)]
+    const shortsLinks = node.matches(SHORTS_LINK_SELECTOR)
+		      ? [node]
+		      : [...node.querySelectorAll(SHORTS_LINK_SELECTOR)]
     
-    return shortsShelves.map(s => s.closest("ytd-rich-section-renderer")).filter(Boolean)
+    return shortsLinks.map(s => s.closest(
+	"grid-shelf-view-model, ytd-rich-section-renderer"
+    )).filter(Boolean)
 }
 
 function getGuideMenuShortsEntries(node) {
