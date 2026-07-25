@@ -5,7 +5,7 @@
     "version": "0.1",
     "browser_specific_settings": {
 	"gecko": {
-	    "id": "focustube@example.com",
+	    "id": "focus-tube@example.com",
 	    "data_collection_permissions": {
 		"required": [
 		    "none"
